@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1>{{ page.title | escape }}</h1>
+    <p class="post-meta">{{ page.date | date: "%-d %B %Y" }}</p>
+
+    {% if page.description %}
+      <p class="post-description">{{ page.description | escape }}</p>
+    {% endif %}
+
+    {% if page.tags and page.tags.size > 0 %}
+      <p class="post-tags">Tags: {{ page.tags | join: ", " | escape }}</p>
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>

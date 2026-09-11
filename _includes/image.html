@@ -1,0 +1,10 @@
+<figure class="article-image">
+  <img
+    src="{{ include.src | relative_url | escape }}"
+    alt="{{ include.alt | escape }}"
+    {% if include.width %}width="{{ include.width | escape }}"{% endif %}
+  >
+  {% if include.caption and include.caption != "" %}
+    <figcaption>{{ include.caption | escape }}</figcaption>
+  {% endif %}
+</figure>

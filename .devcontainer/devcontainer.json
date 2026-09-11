@@ -1,0 +1,8 @@
+{
+  "name": "repo-dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "ubuntu",
+  "updateRemoteUserUID": true
+}

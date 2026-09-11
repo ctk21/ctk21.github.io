@@ -1,0 +1,16 @@
+title: "Technical Notes"
+description: "Technical notes on AI/ML, R&D, quantitative research, software, and engineering."
+
+# Set this to the GitHub Pages URL after the repository is connected.
+url: ""
+baseurl: ""
+
+markdown: kramdown
+highlighter: rouge
+
+permalink: /:year/:month/:day/:title/
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
