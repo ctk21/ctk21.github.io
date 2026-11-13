@@ -1,9 +1,12 @@
 title: "ctk21 notes"
+author: "Tom Kelly"
 description: "Technical notes on AI/ML, R&D, quantitative research, software, and engineering."
 
-# Set this to the GitHub Pages URL after the repository is connected.
-url: ""
+url: "https://ctk21.github.io"
 baseurl: ""
+
+plugins:
+  - jekyll-feed
 
 markdown: kramdown
 highlighter: rouge
@@ -14,3 +17,4 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - scripts/

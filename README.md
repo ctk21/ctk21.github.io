@@ -89,6 +89,37 @@ git push
 
 Pushes to `main` automatically build and deploy the site. There is no separate deployment command and no `gh-pages` branch.
 
+
+## Atom feed
+
+Subscribe at <https://ctk21.github.io/feed.xml>. The feed regenerates automatically
+on deployment when a new article is published under `_posts/`.
+
+In the dev container, run `bundle exec jekyll serve --host 0.0.0.0`, forward port
+4000, and visit <http://localhost:4000/>. Check the footer's **Atom feed** link,
+open <http://localhost:4000/feed.xml>, and inspect the homepage source for
+`type="application/atom+xml"`. Restart Jekyll after configuration changes.
+
+For production validation, run these commands from the repository root
+(requires Python 3):
+
+```bash
+bundle exec jekyll build
+python3 scripts/validate_feed.py
+```
+
+The [validation script](scripts/validate_feed.py) checks XML syntax, the Atom
+namespace, required metadata, author names, dates, unique entry IDs, and canonical
+HTTPS article links in `_site/feed.xml`. It also checks the feed ID, self link,
+and homepage link against their expected public URLs. It exits with a nonzero
+status if a check fails.
+
+Check that the feed includes the expected articles and absolute HTTPS entry
+links. The `url` and `baseurl` in `_config.yml` must match the canonical deployed
+site for correct links; local serve mode normally uses the preview origin.
+After deployment, check the public feed URL and subscribe with a feed reader.
+
+
 ## GitHub Pages activation
 
 After the repository is connected to GitHub, a repository administrator must enable the workflow deployment source once:

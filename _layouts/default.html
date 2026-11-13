@@ -6,6 +6,7 @@
     <title>{% if page.title %}{{ page.title | escape }} · {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
     <meta name="description" content="{{ page.description | default: site.description | escape }}">
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    {% feed_meta %}
   </head>
 
   <body>
@@ -24,6 +25,7 @@
     <footer class="site-footer">
       {% assign current_year = site.time | date: "%Y" %}
       <p>© {% if current_year == "2026" %}2026{% else %}2026–{{ current_year }}{% endif %} Tom Kelly</p>
+      <p><a href="{{ '/feed.xml' | relative_url }}">Atom feed</a></p>
     </footer>
   </body>
 </html>
