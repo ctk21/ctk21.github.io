@@ -114,6 +114,9 @@ HTTPS article links in `_site/feed.xml`. It also checks the feed ID, self link,
 and homepage link against their expected public URLs. It exits with a nonzero
 status if a check fails.
 
+The GitHub Pages build runs this validator before uploading the site artifact;
+validation failures stop deployment.
+
 Check that the feed includes the expected articles and absolute HTTPS entry
 links. The `url` and `baseurl` in `_config.yml` must match the canonical deployed
 site for correct links; local serve mode normally uses the preview origin.
